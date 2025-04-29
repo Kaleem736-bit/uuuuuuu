@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>محفظة Flash وهمية</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- واجهة تسجيل الدخول -->
+<div class="login-container" id="loginSection">
+  <h2>تسجيل الدخول إلى المحفظة</h2>
+  <input type="text" id="username" placeholder="اسم المستخدم" />
+  <button onclick="login()">دخول</button>
+</div>
+
+<!-- واجهة المحفظة -->
+<div class="wallet-container" id="walletSection" style="display:none;">
+  <div class="wallet-header">
+    <h2>Walletkabos</h2>
+    <p>Nile Testnet</p>
+  </div>
+
+  <div class="wallet-card">
+    <h1 id="usdValue">$0.000</h1>
+    <p><span id="trxBalance">0</span> TRX</p>
+    <p id="walletAddress" class="address">Txxxxxxxxxxxxxxxxxxx</p>
+  </div>
+
+  <div class="wallet-actions">
+    <button onclick="toggleSendForm()">إرسال</button>
+    <button onclick="fakeReceive()">استقبال</button>
+  </div>
+
+  <!-- نموذج الإرسال -->
+  <div class="send-form" id="sendForm" style="display: none;">
+    <h3>إرسال فلاش USDT</h3>
+    <input type="text" id="receiverAddress" placeholder="عنوان المحفظة المستقبلة" />
+    <input type="number" id="sendAmount" placeholder="القيمة (USDT)" />
+    <button onclick="sendFlash()">تأكيد الإرسال</button>
+  </div>
+
+  <!-- الأصول -->
+  <div class="wallet-assets">
+    <h3>Assets</h3>
+    <div class="asset">
+      <span>TRX</span>
+      <span id="assetTRX">$0.000</span>
+    </div>
+    <div class="asset">
+      <span>USDD</span>
+      <span>$0</span>
+    </div>
+    <div class="asset">
+      <span>USDT</span>
+      <span id="assetUSDT">$0.000</span>
+    </div>
+  </div>
+
+  <button class="logout-btn" onclick="logout()">تسجيل خروج</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
